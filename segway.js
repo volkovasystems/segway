@@ -47,12 +47,22 @@
 
 	@include:
 		{
+			"asea": "asea",
 			"http": "http"
 		}
 	@end-include
 */
 
-var http = require( "http" );
+if( typeof window == "undefined" ){
+	var asea = require( "asea" );
+	var http = require( "http" );
+}
+
+if( typeof window != "undefined" &&
+	!( "asea" in window ) )
+{
+	throw new Error( "asea is not defined" );
+}
 
 /*;
 	@option:
@@ -80,11 +90,15 @@ var segway = function segway( option ){
 		@end-meta-configuration
 	*/
 
-	var response = option.response;
-	if( !response ||
-		!( response instanceof http.ServerResponse ) )
-	{
-		throw new Error( "invalid response" );
+	var response = null;
+	if( asea.server ){
+		response = option.response;
+
+		if( !response ||
+			!( response instanceof http.ServerResponse ) )
+		{
+			throw new Error( "invalid response" );
+		}
 	}
 
 	var path = option.path;
@@ -112,7 +126,14 @@ var segway = function segway( option ){
 	if( typeof data == "string" &&
 		data )
 	{
-		data = encodeURIComponent( ( new Buffer( data ) ).toString( "base64" ) );
+		if( asea.server ){
+			data = ( new Buffer( data ) ).toString( "base64" );
+
+		}else if( asea.client ){
+			data = btoa( data );
+		}
+
+		data = encodeURIComponent( data );
 
 	}else{
 		data = undefined;
@@ -123,14 +144,21 @@ var segway = function segway( option ){
 		redirectPath = redirectPath + "?data=" + data;
 	}
 
-	if( option.permanent ){
-		response.redirect( 301, redirectPath );
+	if( asea.server ){
+		if( option.permanent ){
+			response.redirect( 301, redirectPath );
 
-	}else{
-		response.redirect( redirectPath );
+		}else{
+			response.redirect( redirectPath );
+		}
+
+	}else if( asea.client ){
+		window.location.replace( redirectPath );
 	}
 
 	return redirectPath;
 };
 
-module.exports = segway;
+if( asea.server ){
+	module.exports = segway;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "segway",
+  "version": "0.1.0",
+  "description": "Status redirect response.",
+  "main": "segway.js",
+  "authors": [
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "status",
+    "redirect",
+    "response",
+    "segway"
+  ],
+  "homepage": "https://github.com/volkovasystems/segway",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "asea": "^0.0.3"
+  }
+}
