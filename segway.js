@@ -163,6 +163,4 @@ const segway = function segway( option ){
 	return redirectPath;
 };
 
-if( asea.server ){
-	module.exports = segway;
-}
+module.exports = segway;
