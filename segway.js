@@ -34,6 +34,9 @@
 			"file": "segway.js",
 			"module": "segway",
 			"author": "Richeve S. Bebedor",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+			],
 			"eMail": "richeve.bebedor@gmail.com",
 			"repository": "https://github.com/volkovasystems/segway.git",
 			"test": "segway-test.js",
@@ -48,21 +51,23 @@
 	@include:
 		{
 			"asea": "asea",
-			"http": "http"
+			"clazof": "clazof",
+			"falze": "falze",
+			"falzy": "falzy",
+			"http": "http",
+			"protype": "protype",
+			"truly": "truly"
 		}
 	@end-include
 */
 
-if( typeof window == "undefined" ){
-	var asea = require( "asea" );
-	var http = require( "http" );
-}
-
-if( typeof window != "undefined" &&
-	!( "asea" in window ) )
-{
-	throw new Error( "asea is not defined" );
-}
+const asea = require( "asea" );
+const clazof = require( "clazof" );
+const falze = require( "falze" );
+const falzy = require( "falzy" );
+const http = require( "http" );
+const protype = require( "protype" );
+const truly = require( "truly" );
 
 /*;
 	@option:
@@ -81,7 +86,8 @@ if( typeof window != "undefined" &&
 		}
 	@end-option
 */
-var segway = function segway( option ){
+
+const segway = function segway( option ){
 	/*;
 		@meta-configuration:
 			{
@@ -90,31 +96,31 @@ var segway = function segway( option ){
 		@end-meta-configuration
 	*/
 
-	var response = null;
+	let response = null;
 	if( asea.server ){
 		response = option.response;
 
-		if( !response ||
-			!( response instanceof http.ServerResponse ) )
+		if( falze( response ) ||
+			!( clazof( response, http.ServerResponse ) ) )
 		{
 			throw new Error( "invalid response" );
 		}
 	}
 
-	var path = option.path;
-	if( typeof path != "string" ||
-		!path )
+	let path = option.path;
+	if( !protype( path, STRING ) ||
+		falzy( path ) )
 	{
 		throw new Error( "invalid path" );
 	}
 
-	var status = option.status;
+	let status = option.status;
 	if( !( /^\d{3}$/ ).test( status.toString( ) ) ){
 		throw new Error( "invalid status" );
 	}
 
-	var data = option.data;
-	if( typeof data == "object" ){
+	let data = option.data;
+	if( protype( data, OBJECT ) ){
 		try{
 			data = JSON.stringify( data );
 
@@ -123,9 +129,7 @@ var segway = function segway( option ){
 		}
 	}
 
-	if( typeof data == "string" &&
-		data )
-	{
+	if( protype( data, STRING ) && truly( data ) ){
 		if( asea.server ){
 			data = ( new Buffer( data ) ).toString( "base64" );
 
@@ -139,7 +143,7 @@ var segway = function segway( option ){
 		data = undefined;
 	}
 
-	var redirectPath = path + status;
+	let redirectPath = path + status;
 	if( data ){
 		redirectPath = redirectPath + "?data=" + data;
 	}

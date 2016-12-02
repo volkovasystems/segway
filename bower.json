@@ -1,10 +1,11 @@
 {
   "name": "segway",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Status redirect response.",
   "main": "segway.js",
   "authors": [
-    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
   ],
   "license": "MIT",
   "keywords": [
@@ -21,7 +22,5 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "asea": "^0.1.2"
-  }
+  "dependencies": {}
 }
