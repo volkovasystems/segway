@@ -1,10 +1,13 @@
 {
   "name": "segway",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Status redirect response.",
   "main": "segway.js",
+  "support": "segway.support.js",
+  "deploy": "segway.deploy.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel segway.js -o segway.support.js && webpack",
+    "test": "mocha segway-test.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +21,7 @@
   ],
   "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
   "contributors": [
-      "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
   ],
   "license": "MIT",
   "bugs": {
@@ -26,12 +29,12 @@
   },
   "homepage": "https://github.com/volkovasystems/segway#readme",
   "dependencies": {
-    "asea": "^0.4.0",
-    "clazof": "0.0.0",
-    "falze": "^0.1.0",
-    "falzy": "^0.5.0",
-    "http": "0.0.0",
-    "protype": "^0.4.0",
-    "truly": "^0.3.0"
+    "asea": "^0.6.0",
+    "babel-runtime": "^6.20.0",
+    "clazof": "^0.1.0",
+    "falze": "^0.3.0",
+    "falzy": "^0.7.0",
+    "protype": "^0.7.0",
+    "truly": "^0.5.0"
   }
 }
