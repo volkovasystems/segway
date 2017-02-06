@@ -1,13 +1,13 @@
 {
   "name": "segway",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Status redirect response.",
   "main": "segway.js",
   "support": "segway.support.js",
   "deploy": "segway.deploy.js",
   "browser": "segway.deploy.js",
   "scripts": {
-    "build": "babel segway.js -o segway.support.js && webpack",
+    "build": "gulp && babel segway.support.js -o segway.support.js && webpack",
     "test": "mocha segway-test.js"
   },
   "repository": {
@@ -32,17 +32,26 @@
   "dependencies": {
     "asea": "^0.8.0",
     "babel-runtime": "^6.22.0",
-    "called": "^0.9.0",
+    "calcify": "^0.3.0",
     "clazof": "^0.5.0",
-    "harden": "^0.14.0",
-    "offcache": "^0.4.0",
-    "protype": "^0.11.0"
+    "falze": "^0.5.0",
+    "falzy": "^0.10.0",
+    "lilfy": "^0.7.0",
+    "protype": "^0.14.0",
+    "truly": "^0.9.0",
+    "truu": "^0.7.0"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
     "babel-core": "^6.22.1",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-latest": "^6.22.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-debug": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
     "source-map-loader": "^0.1.6",
     "webpack": "^2.2.1"
   }

@@ -51,33 +51,39 @@
 	@include:
 		{
 			"asea": "asea",
+			"calcify": "calcify",
 			"clazof": "clazof",
 			"falze": "falze",
 			"falzy": "falzy",
 			"http": "http",
+			"lilfy": "lilfy",
 			"protype": "protype",
-			"truly": "truly"
+			"truly": "truly",
+			"truu": "truu"
 		}
 	@end-include
 */
 
 const asea = require( "asea" );
+const calcify = require( "calcify" );
 const clazof = require( "clazof" );
 const falze = require( "falze" );
 const falzy = require( "falzy" );
-const http = require( "http" );
+const lilfy = require( "lilfy" );
 const protype = require( "protype" );
 const truly = require( "truly" );
+const truu = require( "truu" );
+
+//: @server:
+const http = require( "http" );
+//: @end-server
 
 /*;
 	@option:
 		{
 			"response:required": "http.ServerResponse"
 			"path:required": "string",
-			"status:required": [
-				"string",
-				"number"
-			],
+			"status:required": "string",
 			"data": [
 				"string",
 				"object"
@@ -86,7 +92,6 @@ const truly = require( "truly" );
 		}
 	@end-option
 */
-
 const segway = function segway( option ){
 	/*;
 		@meta-configuration:
@@ -101,55 +106,44 @@ const segway = function segway( option ){
 		response = option.response;
 
 		if( falze( response ) ||
-			!( clazof( response, http.ServerResponse ) ) )
+			!clazof( response, http.ServerResponse ) ||
+			!protype( response.redirect, FUNCTION ) )
 		{
 			throw new Error( "invalid response" );
 		}
 	}
 
 	let path = option.path;
-	if( !protype( path, STRING ) ||
-		falzy( path ) )
-	{
+	if( falzy( path ) || !protype( path, STRING ) ){
 		throw new Error( "invalid path" );
 	}
 
 	let status = option.status;
-	if( !( /^\d{3}$/ ).test( status.toString( ) ) ){
+	if( falzy( status ) || !protype( status, STRING ) ){
 		throw new Error( "invalid status" );
 	}
 
 	let data = option.data;
-	if( protype( data, OBJECT ) ){
+	if( protype( data, OBJECT ) && truu( data ) ){
 		try{
-			data = JSON.stringify( data );
+			data = calcify( data );
 
 		}catch( error ){
-			throw new Error( "error stringifying data", error.message );
+			throw new Error( `error stringify data, ${ error }` );
 		}
 	}
 
 	if( protype( data, STRING ) && truly( data ) ){
-		if( asea.server ){
-			data = ( new Buffer( data ) ).toString( "base64" );
-
-		}else if( asea.client ){
-			data = btoa( data );
-		}
-
-		data = encodeURIComponent( data );
-
-	}else{
-		data = undefined;
+		data = lilfy( data );
 	}
 
-	let redirectPath = path + status;
-	if( data ){
+	let redirectPath = `${ path }/${ status }`;
+	if( truly( data ) ){
 		redirectPath = redirectPath + "?data=" + data;
 	}
 
 	if( asea.server ){
-		if( option.permanent ){
+		if( option.permanent === true ){
 			response.redirect( 301, redirectPath );
 
 		}else{
