@@ -1,6 +1,6 @@
 {
   "name": "segway",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Status redirect response.",
   "main": "segway.js",
   "support": "segway.support.js",
