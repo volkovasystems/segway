@@ -34,4 +34,5 @@ lilfy \
 protype \
 truly \
 truu \
---save
+--save \
+--force-latest

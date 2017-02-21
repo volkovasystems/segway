@@ -1,8 +1,9 @@
 {
   "name": "segway",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Status redirect response.",
   "main": "segway.deploy.js",
+  "support": "segway.support.js",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
     "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
@@ -23,14 +24,14 @@
     "tests"
   ],
   "dependencies": {
-    "asea": "^0.8.0",
-    "calcify": "^0.3.0",
-    "clazof": "^0.5.0",
-    "falze": "^0.5.0",
-    "falzy": "^0.10.0",
-    "lilfy": "^0.6.0",
-    "protype": "^0.14.0",
-    "truly": "^0.9.0",
-    "truu": "^0.7.0"
+    "asea": "^0.10.0",
+    "calcify": "^0.5.0",
+    "clazof": "^0.12.0",
+    "falze": "^0.11.0",
+    "falzy": "^0.13.0",
+    "lilfy": "^0.8.0",
+    "protype": "^0.17.0",
+    "truly": "^0.13.0",
+    "truu": "^0.12.0"
   }
 }
