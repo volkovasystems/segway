@@ -129,7 +129,7 @@ const segway = function segway( option ){
 			data = calcify( data );
 
 		}catch( error ){
-			throw new Error( `error stringify data, ${ error }` );
+			throw new Error( `error stringify data, ${ error.stack }` );
 		}
 	}
 
