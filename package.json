@@ -1,6 +1,6 @@
 {
   "name": "segway",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "Status redirect response.",
   "main": "segway.js",
   "support": "segway.support.js",
@@ -30,29 +30,29 @@
   },
   "homepage": "https://github.com/volkovasystems/segway#readme",
   "dependencies": {
-    "asea": "^0.10.0",
+    "asea": "^0.12.0",
     "babel-runtime": "^6.23.0",
-    "calcify": "^0.5.0",
-    "clazof": "^0.12.0",
-    "falze": "^0.11.0",
-    "falzy": "^0.13.0",
-    "lilfy": "^0.8.0",
-    "protype": "^0.17.0",
-    "truly": "^0.13.0",
-    "truu": "^0.12.0"
+    "calcify": "^0.6.0",
+    "clazof": "^0.16.0",
+    "falze": "^0.17.0",
+    "falzy": "^0.16.0",
+    "lilfy": "^0.9.0",
+    "protype": "^0.20.0",
+    "truly": "^0.16.0",
+    "truu": "^0.20.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.23.0",
-    "babel-core": "^6.23.1",
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.22.0",
+    "babel-preset-latest": "^6.24.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-debug": "^3.1.0",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
-    "source-map-loader": "^0.1.6",
+    "source-map-loader": "^0.2.0",
     "webpack": "^2.2.1"
   }
 }
