@@ -1,6 +1,6 @@
 {
   "name": "segway",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "description": "Status redirect response.",
   "main": "segway.deploy.js",
   "support": "segway.support.js",
@@ -26,12 +26,12 @@
   "dependencies": {
     "asea": "^0.13.0",
     "calcify": "^0.7.0",
-    "clazof": "^0.21.0",
-    "falze": "^0.20.0",
-    "falzy": "^0.17.0",
-    "lilfy": "^0.10.0",
+    "clazof": "^0.22.0",
+    "falze": "^0.21.0",
+    "falzy": "^0.19.0",
+    "lilfy": "^0.11.0",
     "protype": "^0.21.0",
-    "truly": "^0.17.0",
-    "truu": "^0.23.0"
+    "truly": "^0.18.0",
+    "truu": "^0.24.0"
   }
 }
