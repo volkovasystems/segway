@@ -736,7 +736,7 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-brace-expansion@^1.0.0:
+brace-expansion@^1.0.0, brace-expansion@^1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.7.tgz#3effc3c50e000531fb720eaff80f0ae8ef23cf59"
   dependencies:
@@ -876,8 +876,8 @@ chalk@^1.0.0, chalk@^1.1.0, chalk@^1.1.1:
     supports-color "^2.0.0"
 
 chokidar@^1.4.3, chokidar@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.6.1.tgz#2f4447ab5e96e50fb3d789fd90d4c72e0e4c70c2"
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.7.0.tgz#798e689778151c8076b4b360e5edd28cda2bb468"
   dependencies:
     anymatch "^1.3.0"
     async-each "^1.0.0"
@@ -900,18 +900,18 @@ circular-json@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.1.tgz#be8b36aefccde8b3ca7aa2d6afc07a37242c0d2d"
 
-clazof@^0.25.0:
-  version "0.25.0"
-  resolved "https://registry.yarnpkg.com/clazof/-/clazof-0.25.0.tgz#3b97ccb4cf171a536e647ed3117bbb08d1ca0434"
+clazof@^0.27.0:
+  version "0.27.0"
+  resolved "https://registry.yarnpkg.com/clazof/-/clazof-0.27.0.tgz#30c45e3cd06455f567e0a8a5285f41df0abf7a3f"
   dependencies:
     babel-runtime "^6.23.0"
     falzy "^0.19.0"
-    fname "^0.5.0"
+    fname "^0.8.0"
     portel "^0.3.0"
     protype "^0.21.0"
     raze "^0.29.0"
     stringe "^0.3.0"
-    wauker "^0.12.0"
+    wauker "^0.14.0"
 
 cliui@^2.1.0:
   version "2.1.0"
@@ -1358,23 +1358,23 @@ flagged-respawn@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/flagged-respawn/-/flagged-respawn-0.3.2.tgz#ff191eddcd7088a675b2610fffc976be9b8074b5"
 
-fname@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/fname/-/fname-0.5.0.tgz#d0a2b77d5ea147770c12d8559f8919aa58fc7fa1"
+fname@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/fname/-/fname-0.8.0.tgz#48832f5b45d50e3966df7332c8b4b325a62caf7d"
   dependencies:
     babel-runtime "^6.23.0"
     falzy "^0.19.0"
     mtch "^0.1.0"
+    nmde "^0.0.0"
     protype "^0.21.0"
-    truly "^0.18.0"
 
-fnamed@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/fnamed/-/fnamed-0.6.0.tgz#4f4c948afeb75c40db17df579db9772df0931214"
+fnamed@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/fnamed/-/fnamed-0.8.0.tgz#c4efeecee9f5fddc6b32e184bd1b8d29b5050277"
   dependencies:
     babel-runtime "^6.23.0"
     falzy "^0.19.0"
-    fname "^0.5.0"
+    fname "^0.8.0"
     protype "^0.21.0"
     truly "^0.18.0"
 
@@ -1436,7 +1436,7 @@ fstream@^1.0.0, fstream@^1.0.10, fstream@^1.0.2:
     mkdirp ">=0.5 0"
     rimraf "2"
 
-gauge@~2.7.1:
+gauge@~2.7.3:
   version "2.7.4"
   resolved "https://registry.yarnpkg.com/gauge/-/gauge-2.7.4.tgz#2c03405c7538c39d7eb37b317022e325fb018bf7"
   dependencies:
@@ -2036,13 +2036,13 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.3.6"
 
-kein@^0.23.0:
-  version "0.23.0"
-  resolved "https://registry.yarnpkg.com/kein/-/kein-0.23.0.tgz#fd7f1f9a45853ce6f882ab3246e4c6e3b8b97a55"
+kein@^0.25.0:
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/kein/-/kein-0.25.0.tgz#f756e6a3278394e9d1827005c610dda3b4baacda"
   dependencies:
     babel-runtime "^6.23.0"
     falzy "^0.19.0"
-    fnamed "^0.6.0"
+    fnamed "^0.8.0"
     portel "^0.3.0"
     protype "^0.21.0"
     zelf "^0.11.0"
@@ -2323,10 +2323,10 @@ minimatch@^2.0.1:
     brace-expansion "^1.0.0"
 
 minimatch@^3.0.0, minimatch@^3.0.2:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.3.tgz#2a4e4090b96b2db06a9d7df01055a62a77c9b774"
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   dependencies:
-    brace-expansion "^1.0.0"
+    brace-expansion "^1.1.7"
 
 minimatch@~0.2.11:
   version "0.2.14"
@@ -2387,6 +2387,15 @@ nan@^2.3.0:
 natives@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/natives/-/natives-1.1.0.tgz#e9ff841418a6b2ec7a495e939984f78f163e6e31"
+
+nmde@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/nmde/-/nmde-0.0.0.tgz#173eb8d5b5dad6b7c403fcfd92f04616509c3326"
+  dependencies:
+    babel-runtime "^6.23.0"
+    falzy "^0.19.0"
+    protype "^0.21.0"
+    truly "^0.18.0"
 
 node-libs-browser@^2.0.0:
   version "2.0.0"
@@ -2453,12 +2462,12 @@ normalize-path@^2.0.1:
     remove-trailing-separator "^1.0.1"
 
 npmlog@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/npmlog/-/npmlog-4.0.2.tgz#d03950e0e78ce1527ba26d2a7592e9348ac3e75f"
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/npmlog/-/npmlog-4.1.0.tgz#dc59bee85f64f00ed424efb2af0783df25d1c0b5"
   dependencies:
     are-we-there-yet "~1.1.2"
     console-control-strings "~1.1.0"
-    gauge "~2.7.1"
+    gauge "~2.7.3"
     set-blocking "~2.0.0"
 
 number-is-nan@^1.0.0:
@@ -2688,15 +2697,15 @@ process@^0.11.0:
   version "0.11.10"
   resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
 
-protease@^0.20.0:
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/protease/-/protease-0.20.0.tgz#0162fa94711421a0de5d8eafd1740ec6be3c81e0"
+protease@^0.22.0:
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/protease/-/protease-0.22.0.tgz#a01a828d24c7371e4ba89fe0ed383d4fbfbbf0b1"
   dependencies:
     babel-runtime "^6.23.0"
     falzy "^0.19.0"
-    fname "^0.5.0"
+    fname "^0.8.0"
     impel "^0.14.0"
-    kein "^0.23.0"
+    kein "^0.25.0"
     protype "^0.21.0"
 
 protype@^0.21.0:
@@ -3016,8 +3025,8 @@ sntp@1.x.x:
     hoek "2.x.x"
 
 source-list-map@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-1.1.1.tgz#1a33ac210ca144d1e561f906ebccab5669ff4cb4"
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-1.1.2.tgz#9889019d1024cce55cdc069498337ef6186a11a1"
 
 source-map-loader@^0.2.1:
   version "0.2.1"
@@ -3088,8 +3097,8 @@ stream-consume@~0.1.0:
   resolved "https://registry.yarnpkg.com/stream-consume/-/stream-consume-0.1.0.tgz#a41ead1a6d6081ceb79f65b061901b6d8f3d1d0f"
 
 stream-http@^2.3.1:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/stream-http/-/stream-http-2.7.0.tgz#cec1f4e3b494bc4a81b451808970f8b20b4ed5f6"
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/stream-http/-/stream-http-2.7.1.tgz#546a51741ad5a6b07e9e31b0b10441a917df528a"
   dependencies:
     builtin-status-codes "^3.0.0"
     inherits "^2.0.1"
@@ -3295,8 +3304,8 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
 uglify-js@^2.8.5:
-  version "2.8.22"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.22.tgz#d54934778a8da14903fa29a326fb24c0ab51a1a0"
+  version "2.8.23"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.23.tgz#8230dd9783371232d62a7821e2cf9a817270a8a0"
   dependencies:
     source-map "~0.5.1"
     yargs "~3.10.0"
@@ -3405,14 +3414,14 @@ watchpack@^1.3.1:
     chokidar "^1.4.3"
     graceful-fs "^4.1.2"
 
-wauker@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/wauker/-/wauker-0.12.0.tgz#5cf89fdc39202956e7594aac6b20cc3ae2a84f4a"
+wauker@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/wauker/-/wauker-0.14.0.tgz#8769caec8c6e43a0eacafae0d62cff5c48baa03e"
   dependencies:
     babel-runtime "^6.23.0"
     een "^0.18.0"
     falzy "^0.19.0"
-    protease "^0.20.0"
+    protease "^0.22.0"
     protype "^0.21.0"
 
 webpack-sources@^0.2.3:
@@ -3422,9 +3431,9 @@ webpack-sources@^0.2.3:
     source-list-map "^1.1.1"
     source-map "~0.5.3"
 
-webpack@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.4.1.tgz#15a91dbe34966d8a4b99c7d656efd92a2e5a6f6a"
+webpack@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.5.1.tgz#61742f0cf8af555b87460a9cd8bba2f1e3ee2fce"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"
