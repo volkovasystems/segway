@@ -1,160 +1,160 @@
 "use strict";
 
 /*;
-              	@module-license:
-              		The MIT License (MIT)
-              		@mit-license
-              
-              		Copyright (@c) 2017 Richeve Siodina Bebedor
-              		@email: richeve.bebedor@gmail.com
-              
-              		Permission is hereby granted, free of charge, to any person obtaining a copy
-              		of this software and associated documentation files (the "Software"), to deal
-              		in the Software without restriction, including without limitation the rights
-              		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-              		copies of the Software, and to permit persons to whom the Software is
-              		furnished to do so, subject to the following conditions:
-              
-              		The above copyright notice and this permission notice shall be included in all
-              		copies or substantial portions of the Software.
-              
-              		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-              		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-              		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-              		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-              		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-              		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-              		SOFTWARE.
-              	@end-module-license
-              
-              	@module-configuration:
-              		{
-              			"package": "segway",
-              			"path": "segway/segway.js",
-              			"file": "segway.js",
-              			"module": "segway",
-              			"author": "Richeve S. Bebedor",
-              			"contributors": [
-              				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-              			],
-              			"eMail": "richeve.bebedor@gmail.com",
-              			"repository": "https://github.com/volkovasystems/segway.git",
-              			"test": "segway-test.js",
-              			"global": true
-              		}
-              	@end-module-configuration
-              
-              	@module-documentation:
-              		Data is base 64 encoded then applied with encodeURIComponent.
-              	@end-module-documentation
-              
-              	@include:
-              		{
-              			"asea": "asea",
-              			"calcify": "calcify",
-              			"clazof": "clazof",
-              			"falze": "falze",
-              			"falzy": "falzy",
-              			"http": "http",
-              			"lilfy": "lilfy",
-              			"protype": "protype",
-              			"truly": "truly",
-              			"truu": "truu"
-              		}
-              	@end-include
-              */
+	@module-license:
+		The MIT License (MIT)
+		@mit-license
 
-var asea = require("asea");
-var calcify = require("calcify");
-var clazof = require("clazof");
-var falze = require("falze");
-var falzy = require("falzy");
-var lilfy = require("lilfy");
-var protype = require("protype");
-var truly = require("truly");
-var truu = require("truu");
+		Copyright (@c) 2017 Richeve Siodina Bebedor
+		@email: richeve.bebedor@gmail.com
+
+		Permission is hereby granted, free of charge, to any person obtaining a copy
+		of this software and associated documentation files (the "Software"), to deal
+		in the Software without restriction, including without limitation the rights
+		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+		copies of the Software, and to permit persons to whom the Software is
+		furnished to do so, subject to the following conditions:
+
+		The above copyright notice and this permission notice shall be included in all
+		copies or substantial portions of the Software.
+
+		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+		SOFTWARE.
+	@end-module-license
+
+	@module-configuration:
+		{
+			"package": "segway",
+			"path": "segway/segway.js",
+			"file": "segway.js",
+			"module": "segway",
+			"author": "Richeve S. Bebedor",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+			],
+			"eMail": "richeve.bebedor@gmail.com",
+			"repository": "https://github.com/volkovasystems/segway.git",
+			"test": "segway-test.js",
+			"global": true
+		}
+	@end-module-configuration
+
+	@module-documentation:
+		Data is base 64 encoded then applied with encodeURIComponent.
+	@end-module-documentation
+
+	@include:
+		{
+			"asea": "asea",
+			"calcify": "calcify",
+			"clazof": "clazof",
+			"falze": "falze",
+			"falzy": "falzy",
+			"http": "http",
+			"lilfy": "lilfy",
+			"protype": "protype",
+			"truly": "truly",
+			"truu": "truu"
+		}
+	@end-include
+*/
+
+var asea=require("asea");
+var calcify=require("calcify");
+var clazof=require("clazof");
+var falze=require("falze");
+var falzy=require("falzy");
+var lilfy=require("lilfy");
+var protype=require("protype");
+var truly=require("truly");
+var truu=require("truu");
 
 
 
 /*;
-                            	@option:
-                            		{
-                            			"response:required": "http.ServerResponse"
-                            			"path:required": "string",
-                            			"status:required": "string",
-                            			"data": [
-                            				"string",
-                            				"object"
-                            			],
-                            			"permanent": "boolean"
-                            		}
-                            	@end-option
-                            */
-var segway = function segway(option) {
-	/*;
-                                      	@meta-configuration:
-                                      		{
-                                      			"option": "object"
-                                      		}
-                                      	@end-meta-configuration
-                                      */
-
-	var response = null;
-	if (asea.server) {
-		response = option.response;
-
-		if (falze(response) ||
-		!clazof(response, http.ServerResponse) ||
-		!protype(response.redirect, FUNCTION))
+	@option:
 		{
-			throw new Error("invalid response");
+			"response:required": "http.ServerResponse"
+			"path:required": "string",
+			"status:required": "string",
+			"data": [
+				"string",
+				"object"
+			],
+			"permanent": "boolean"
 		}
-	}
+	@end-option
+*/
+var segway=function segway(option){
+/*;
+		@meta-configuration:
+			{
+				"option": "object"
+			}
+		@end-meta-configuration
+	*/
 
-	var path = option.path;
-	if (falzy(path) || !protype(path, STRING)) {
-		throw new Error("invalid path");
-	}
+var response=null;
+if(asea.server){
+response=option.response;
 
-	var status = option.status;
-	if (falzy(status) || !protype(status, STRING)) {
-		throw new Error("invalid status");
-	}
+if(falze(response)||
+!clazof(response,http.ServerResponse)||
+!protype(response.redirect,FUNCTION))
+{
+throw new Error("invalid response");
+}
+}
 
-	var data = option.data;
-	if (protype(data, OBJECT) && truu(data)) {
-		try {
-			data = calcify(data);
+var path=option.path;
+if(falzy(path)||!protype(path,STRING)){
+throw new Error("invalid path");
+}
 
-		} catch (error) {
-			throw new Error("error stringify data, " + error.stack);
-		}
-	}
+var status=option.status;
+if(falzy(status)||!protype(status,STRING)){
+throw new Error("invalid status");
+}
 
-	if (protype(data, STRING) && truly(data)) {
-		data = lilfy(data);
-	}
+var data=option.data;
+if(protype(data,OBJECT)&&truu(data)){
+try{
+data=calcify(data);
 
-	var redirectPath = path + "/" + status;
-	if (truly(data)) {
-		redirectPath = redirectPath + "?data=" + data;
-	}
+}catch(error){
+throw new Error("error stringify data, "+error.stack);
+}
+}
 
-	if (asea.server) {
-		if (option.permanent === true) {
-			response.redirect(301, redirectPath);
+if(protype(data,STRING)&&truly(data)){
+data=lilfy(data);
+}
 
-		} else {
-			response.redirect(redirectPath);
-		}
+var redirectPath=path+"/"+status;
+if(truly(data)){
+redirectPath=redirectPath+"?data="+data;
+}
 
-	} else if (asea.client) {
-		window.location.replace(redirectPath);
-	}
+if(asea.server){
+if(option.permanent===true){
+response.redirect(301,redirectPath);
 
-	return redirectPath;
+}else{
+response.redirect(redirectPath);
+}
+
+}else if(asea.client){
+window.location.replace(redirectPath);
+}
+
+return redirectPath;
 };
 
-module.exports = segway;
-
+module.exports=segway;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlZ3dheS5zdXBwb3J0LmpzIl0sIm5hbWVzIjpbImFzZWEiLCJyZXF1aXJlIiwiY2FsY2lmeSIsImNsYXpvZiIsImZhbHplIiwiZmFsenkiLCJsaWxmeSIsInByb3R5cGUiLCJ0cnVseSIsInRydXUiLCJzZWd3YXkiLCJvcHRpb24iLCJyZXNwb25zZSIsInNlcnZlciIsImh0dHAiLCJTZXJ2ZXJSZXNwb25zZSIsInJlZGlyZWN0IiwiRlVOQ1RJT04iLCJFcnJvciIsInBhdGgiLCJTVFJJTkciLCJzdGF0dXMiLCJkYXRhIiwiT0JKRUNUIiwiZXJyb3IiLCJzdGFjayIsInJlZGlyZWN0UGF0aCIsInBlcm1hbmVudCIsImNsaWVudCIsIndpbmRvdyIsImxvY2F0aW9uIiwicmVwbGFjZSIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUVBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBZ0VBLEdBQU1BLE1BQU9DLFFBQVMsTUFBVCxDQUFiO0FBQ0EsR0FBTUMsU0FBVUQsUUFBUyxTQUFULENBQWhCO0FBQ0EsR0FBTUUsUUFBU0YsUUFBUyxRQUFULENBQWY7QUFDQSxHQUFNRyxPQUFRSCxRQUFTLE9BQVQsQ0FBZDtBQUNBLEdBQU1JLE9BQVFKLFFBQVMsT0FBVCxDQUFkO0FBQ0EsR0FBTUssT0FBUUwsUUFBUyxPQUFULENBQWQ7QUFDQSxHQUFNTSxTQUFVTixRQUFTLFNBQVQsQ0FBaEI7QUFDQSxHQUFNTyxPQUFRUCxRQUFTLE9BQVQsQ0FBZDtBQUNBLEdBQU1RLE1BQU9SLFFBQVMsTUFBVCxDQUFiOzs7O0FBSUE7Ozs7Ozs7Ozs7Ozs7O0FBY0EsR0FBTVMsUUFBUyxRQUFTQSxPQUFULENBQWlCQyxNQUFqQixDQUF5QjtBQUN2Qzs7Ozs7Ozs7QUFRQSxHQUFJQyxVQUFXLElBQWY7QUFDQSxHQUFJWixLQUFLYSxNQUFULENBQWlCO0FBQ2hCRCxTQUFXRCxPQUFPQyxRQUFsQjs7QUFFQSxHQUFJUixNQUFPUSxRQUFQO0FBQ0gsQ0FBQ1QsT0FBUVMsUUFBUixDQUFrQkUsS0FBS0MsY0FBdkIsQ0FERTtBQUVILENBQUNSLFFBQVNLLFNBQVNJLFFBQWxCLENBQTRCQyxRQUE1QixDQUZGO0FBR0E7QUFDQyxLQUFNLElBQUlDLE1BQUosQ0FBVyxrQkFBWCxDQUFOO0FBQ0E7QUFDRDs7QUFFRCxHQUFJQyxNQUFPUixPQUFPUSxJQUFsQjtBQUNBLEdBQUlkLE1BQU9jLElBQVAsR0FBaUIsQ0FBQ1osUUFBU1ksSUFBVCxDQUFlQyxNQUFmLENBQXRCLENBQStDO0FBQzlDLEtBQU0sSUFBSUYsTUFBSixDQUFXLGNBQVgsQ0FBTjtBQUNBOztBQUVELEdBQUlHLFFBQVNWLE9BQU9VLE1BQXBCO0FBQ0EsR0FBSWhCLE1BQU9nQixNQUFQLEdBQW1CLENBQUNkLFFBQVNjLE1BQVQsQ0FBaUJELE1BQWpCLENBQXhCLENBQW1EO0FBQ2xELEtBQU0sSUFBSUYsTUFBSixDQUFXLGdCQUFYLENBQU47QUFDQTs7QUFFRCxHQUFJSSxNQUFPWCxPQUFPVyxJQUFsQjtBQUNBLEdBQUlmLFFBQVNlLElBQVQsQ0FBZUMsTUFBZixHQUEyQmQsS0FBTWEsSUFBTixDQUEvQixDQUE2QztBQUM1QyxHQUFHO0FBQ0ZBLEtBQU9wQixRQUFTb0IsSUFBVCxDQUFQOztBQUVBLE9BQU9FLEtBQVAsQ0FBYztBQUNkLEtBQU0sSUFBSU4sTUFBSiwwQkFBcUNNLE1BQU1DLEtBQTNDLENBQU47QUFDQTtBQUNEOztBQUVELEdBQUlsQixRQUFTZSxJQUFULENBQWVGLE1BQWYsR0FBMkJaLE1BQU9jLElBQVAsQ0FBL0IsQ0FBOEM7QUFDN0NBLEtBQU9oQixNQUFPZ0IsSUFBUCxDQUFQO0FBQ0E7O0FBRUQsR0FBSUksY0FBbUJQLElBQW5CLEtBQTZCRSxNQUFqQztBQUNBLEdBQUliLE1BQU9jLElBQVAsQ0FBSixDQUFtQjtBQUNsQkksYUFBZUEsYUFBZSxRQUFmLENBQTBCSixJQUF6QztBQUNBOztBQUVELEdBQUl0QixLQUFLYSxNQUFULENBQWlCO0FBQ2hCLEdBQUlGLE9BQU9nQixTQUFQLEdBQXFCLElBQXpCLENBQStCO0FBQzlCZixTQUFTSSxRQUFULENBQW1CLEdBQW5CLENBQXdCVSxZQUF4Qjs7QUFFQSxDQUhELElBR0s7QUFDSmQsU0FBU0ksUUFBVCxDQUFtQlUsWUFBbkI7QUFDQTs7QUFFRCxDQVJELElBUU0sSUFBSTFCLEtBQUs0QixNQUFULENBQWlCO0FBQ3RCQyxPQUFPQyxRQUFQLENBQWdCQyxPQUFoQixDQUF5QkwsWUFBekI7QUFDQTs7QUFFRCxNQUFPQSxhQUFQO0FBQ0EsQ0EvREQ7O0FBaUVBTSxPQUFPQyxPQUFQLENBQWlCdkIsTUFBakIiLCJmaWxlIjoic2Vnd2F5LnN1cHBvcnQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJcInVzZSBzdHJpY3RcIjtcclxuXHJcbi8qO1xyXG5cdEBtb2R1bGUtbGljZW5zZTpcclxuXHRcdFRoZSBNSVQgTGljZW5zZSAoTUlUKVxyXG5cdFx0QG1pdC1saWNlbnNlXHJcblxyXG5cdFx0Q29weXJpZ2h0IChAYykgMjAxNyBSaWNoZXZlIFNpb2RpbmEgQmViZWRvclxyXG5cdFx0QGVtYWlsOiByaWNoZXZlLmJlYmVkb3JAZ21haWwuY29tXHJcblxyXG5cdFx0UGVybWlzc2lvbiBpcyBoZXJlYnkgZ3JhbnRlZCwgZnJlZSBvZiBjaGFyZ2UsIHRvIGFueSBwZXJzb24gb2J0YWluaW5nIGEgY29weVxyXG5cdFx0b2YgdGhpcyBzb2Z0d2FyZSBhbmQgYXNzb2NpYXRlZCBkb2N1bWVudGF0aW9uIGZpbGVzICh0aGUgXCJTb2Z0d2FyZVwiKSwgdG8gZGVhbFxyXG5cdFx0aW4gdGhlIFNvZnR3YXJlIHdpdGhvdXQgcmVzdHJpY3Rpb24sIGluY2x1ZGluZyB3aXRob3V0IGxpbWl0YXRpb24gdGhlIHJpZ2h0c1xyXG5cdFx0dG8gdXNlLCBjb3B5LCBtb2RpZnksIG1lcmdlLCBwdWJsaXNoLCBkaXN0cmlidXRlLCBzdWJsaWNlbnNlLCBhbmQvb3Igc2VsbFxyXG5cdFx0Y29waWVzIG9mIHRoZSBTb2Z0d2FyZSwgYW5kIHRvIHBlcm1pdCBwZXJzb25zIHRvIHdob20gdGhlIFNvZnR3YXJlIGlzXHJcblx0XHRmdXJuaXNoZWQgdG8gZG8gc28sIHN1YmplY3QgdG8gdGhlIGZvbGxvd2luZyBjb25kaXRpb25zOlxyXG5cclxuXHRcdFRoZSBhYm92ZSBjb3B5cmlnaHQgbm90aWNlIGFuZCB0aGlzIHBlcm1pc3Npb24gbm90aWNlIHNoYWxsIGJlIGluY2x1ZGVkIGluIGFsbFxyXG5cdFx0Y29waWVzIG9yIHN1YnN0YW50aWFsIHBvcnRpb25zIG9mIHRoZSBTb2Z0d2FyZS5cclxuXHJcblx0XHRUSEUgU09GVFdBUkUgSVMgUFJPVklERUQgXCJBUyBJU1wiLCBXSVRIT1VUIFdBUlJBTlRZIE9GIEFOWSBLSU5ELCBFWFBSRVNTIE9SXHJcblx0XHRJTVBMSUVELCBJTkNMVURJTkcgQlVUIE5PVCBMSU1JVEVEIFRPIFRIRSBXQVJSQU5USUVTIE9GIE1FUkNIQU5UQUJJTElUWSxcclxuXHRcdEZJVE5FU1MgRk9SIEEgUEFSVElDVUxBUiBQVVJQT1NFIEFORCBOT05JTkZSSU5HRU1FTlQuIElOIE5PIEVWRU5UIFNIQUxMIFRIRVxyXG5cdFx0QVVUSE9SUyBPUiBDT1BZUklHSFQgSE9MREVSUyBCRSBMSUFCTEUgRk9SIEFOWSBDTEFJTSwgREFNQUdFUyBPUiBPVEhFUlxyXG5cdFx0TElBQklMSVRZLCBXSEVUSEVSIElOIEFOIEFDVElPTiBPRiBDT05UUkFDVCwgVE9SVCBPUiBPVEhFUldJU0UsIEFSSVNJTkcgRlJPTSxcclxuXHRcdE9VVCBPRiBPUiBJTiBDT05ORUNUSU9OIFdJVEggVEhFIFNPRlRXQVJFIE9SIFRIRSBVU0UgT1IgT1RIRVIgREVBTElOR1MgSU4gVEhFXHJcblx0XHRTT0ZUV0FSRS5cclxuXHRAZW5kLW1vZHVsZS1saWNlbnNlXHJcblxyXG5cdEBtb2R1bGUtY29uZmlndXJhdGlvbjpcclxuXHRcdHtcclxuXHRcdFx0XCJwYWNrYWdlXCI6IFwic2Vnd2F5XCIsXHJcblx0XHRcdFwicGF0aFwiOiBcInNlZ3dheS9zZWd3YXkuanNcIixcclxuXHRcdFx0XCJmaWxlXCI6IFwic2Vnd2F5LmpzXCIsXHJcblx0XHRcdFwibW9kdWxlXCI6IFwic2Vnd2F5XCIsXHJcblx0XHRcdFwiYXV0aG9yXCI6IFwiUmljaGV2ZSBTLiBCZWJlZG9yXCIsXHJcblx0XHRcdFwiY29udHJpYnV0b3JzXCI6IFtcclxuXHRcdFx0XHRcIkpvaG4gTGVub24gTWFnaGFub3kgPGpvaG5sZW5vbm1hZ2hhbm95QGdtYWlsLmNvbT5cIlxyXG5cdFx0XHRdLFxyXG5cdFx0XHRcImVNYWlsXCI6IFwicmljaGV2ZS5iZWJlZG9yQGdtYWlsLmNvbVwiLFxyXG5cdFx0XHRcInJlcG9zaXRvcnlcIjogXCJodHRwczovL2dpdGh1Yi5jb20vdm9sa292YXN5c3RlbXMvc2Vnd2F5LmdpdFwiLFxyXG5cdFx0XHRcInRlc3RcIjogXCJzZWd3YXktdGVzdC5qc1wiLFxyXG5cdFx0XHRcImdsb2JhbFwiOiB0cnVlXHJcblx0XHR9XHJcblx0QGVuZC1tb2R1bGUtY29uZmlndXJhdGlvblxyXG5cclxuXHRAbW9kdWxlLWRvY3VtZW50YXRpb246XHJcblx0XHREYXRhIGlzIGJhc2UgNjQgZW5jb2RlZCB0aGVuIGFwcGxpZWQgd2l0aCBlbmNvZGVVUklDb21wb25lbnQuXHJcblx0QGVuZC1tb2R1bGUtZG9jdW1lbnRhdGlvblxyXG5cclxuXHRAaW5jbHVkZTpcclxuXHRcdHtcclxuXHRcdFx0XCJhc2VhXCI6IFwiYXNlYVwiLFxyXG5cdFx0XHRcImNhbGNpZnlcIjogXCJjYWxjaWZ5XCIsXHJcblx0XHRcdFwiY2xhem9mXCI6IFwiY2xhem9mXCIsXHJcblx0XHRcdFwiZmFsemVcIjogXCJmYWx6ZVwiLFxyXG5cdFx0XHRcImZhbHp5XCI6IFwiZmFsenlcIixcclxuXHRcdFx0XCJodHRwXCI6IFwiaHR0cFwiLFxyXG5cdFx0XHRcImxpbGZ5XCI6IFwibGlsZnlcIixcclxuXHRcdFx0XCJwcm90eXBlXCI6IFwicHJvdHlwZVwiLFxyXG5cdFx0XHRcInRydWx5XCI6IFwidHJ1bHlcIixcclxuXHRcdFx0XCJ0cnV1XCI6IFwidHJ1dVwiXHJcblx0XHR9XHJcblx0QGVuZC1pbmNsdWRlXHJcbiovXHJcblxyXG5jb25zdCBhc2VhID0gcmVxdWlyZSggXCJhc2VhXCIgKTtcclxuY29uc3QgY2FsY2lmeSA9IHJlcXVpcmUoIFwiY2FsY2lmeVwiICk7XHJcbmNvbnN0IGNsYXpvZiA9IHJlcXVpcmUoIFwiY2xhem9mXCIgKTtcclxuY29uc3QgZmFsemUgPSByZXF1aXJlKCBcImZhbHplXCIgKTtcclxuY29uc3QgZmFsenkgPSByZXF1aXJlKCBcImZhbHp5XCIgKTtcclxuY29uc3QgbGlsZnkgPSByZXF1aXJlKCBcImxpbGZ5XCIgKTtcclxuY29uc3QgcHJvdHlwZSA9IHJlcXVpcmUoIFwicHJvdHlwZVwiICk7XHJcbmNvbnN0IHRydWx5ID0gcmVxdWlyZSggXCJ0cnVseVwiICk7XHJcbmNvbnN0IHRydXUgPSByZXF1aXJlKCBcInRydXVcIiApO1xyXG5cclxuXHJcblxyXG4vKjtcclxuXHRAb3B0aW9uOlxyXG5cdFx0e1xyXG5cdFx0XHRcInJlc3BvbnNlOnJlcXVpcmVkXCI6IFwiaHR0cC5TZXJ2ZXJSZXNwb25zZVwiXHJcblx0XHRcdFwicGF0aDpyZXF1aXJlZFwiOiBcInN0cmluZ1wiLFxyXG5cdFx0XHRcInN0YXR1czpyZXF1aXJlZFwiOiBcInN0cmluZ1wiLFxyXG5cdFx0XHRcImRhdGFcIjogW1xyXG5cdFx0XHRcdFwic3RyaW5nXCIsXHJcblx0XHRcdFx0XCJvYmplY3RcIlxyXG5cdFx0XHRdLFxyXG5cdFx0XHRcInBlcm1hbmVudFwiOiBcImJvb2xlYW5cIlxyXG5cdFx0fVxyXG5cdEBlbmQtb3B0aW9uXHJcbiovXHJcbmNvbnN0IHNlZ3dheSA9IGZ1bmN0aW9uIHNlZ3dheSggb3B0aW9uICl7XHJcblx0Lyo7XHJcblx0XHRAbWV0YS1jb25maWd1cmF0aW9uOlxyXG5cdFx0XHR7XHJcblx0XHRcdFx0XCJvcHRpb25cIjogXCJvYmplY3RcIlxyXG5cdFx0XHR9XHJcblx0XHRAZW5kLW1ldGEtY29uZmlndXJhdGlvblxyXG5cdCovXHJcblxyXG5cdGxldCByZXNwb25zZSA9IG51bGw7XHJcblx0aWYoIGFzZWEuc2VydmVyICl7XHJcblx0XHRyZXNwb25zZSA9IG9wdGlvbi5yZXNwb25zZTtcclxuXHJcblx0XHRpZiggZmFsemUoIHJlc3BvbnNlICkgfHxcclxuXHRcdFx0IWNsYXpvZiggcmVzcG9uc2UsIGh0dHAuU2VydmVyUmVzcG9uc2UgKSB8fFxyXG5cdFx0XHQhcHJvdHlwZSggcmVzcG9uc2UucmVkaXJlY3QsIEZVTkNUSU9OICkgKVxyXG5cdFx0e1xyXG5cdFx0XHR0aHJvdyBuZXcgRXJyb3IoIFwiaW52YWxpZCByZXNwb25zZVwiICk7XHJcblx0XHR9XHJcblx0fVxyXG5cclxuXHRsZXQgcGF0aCA9IG9wdGlvbi5wYXRoO1xyXG5cdGlmKCBmYWx6eSggcGF0aCApIHx8ICFwcm90eXBlKCBwYXRoLCBTVFJJTkcgKSApe1xyXG5cdFx0dGhyb3cgbmV3IEVycm9yKCBcImludmFsaWQgcGF0aFwiICk7XHJcblx0fVxyXG5cclxuXHRsZXQgc3RhdHVzID0gb3B0aW9uLnN0YXR1cztcclxuXHRpZiggZmFsenkoIHN0YXR1cyApIHx8ICFwcm90eXBlKCBzdGF0dXMsIFNUUklORyApICl7XHJcblx0XHR0aHJvdyBuZXcgRXJyb3IoIFwiaW52YWxpZCBzdGF0dXNcIiApO1xyXG5cdH1cclxuXHJcblx0bGV0IGRhdGEgPSBvcHRpb24uZGF0YTtcclxuXHRpZiggcHJvdHlwZSggZGF0YSwgT0JKRUNUICkgJiYgdHJ1dSggZGF0YSApICl7XHJcblx0XHR0cnl7XHJcblx0XHRcdGRhdGEgPSBjYWxjaWZ5KCBkYXRhICk7XHJcblxyXG5cdFx0fWNhdGNoKCBlcnJvciApe1xyXG5cdFx0XHR0aHJvdyBuZXcgRXJyb3IoIGBlcnJvciBzdHJpbmdpZnkgZGF0YSwgJHsgZXJyb3Iuc3RhY2sgfWAgKTtcclxuXHRcdH1cclxuXHR9XHJcblxyXG5cdGlmKCBwcm90eXBlKCBkYXRhLCBTVFJJTkcgKSAmJiB0cnVseSggZGF0YSApICl7XHJcblx0XHRkYXRhID0gbGlsZnkoIGRhdGEgKTtcclxuXHR9XHJcblxyXG5cdGxldCByZWRpcmVjdFBhdGggPSBgJHsgcGF0aCB9LyR7IHN0YXR1cyB9YDtcclxuXHRpZiggdHJ1bHkoIGRhdGEgKSApe1xyXG5cdFx0cmVkaXJlY3RQYXRoID0gcmVkaXJlY3RQYXRoICsgXCI/ZGF0YT1cIiArIGRhdGE7XHJcblx0fVxyXG5cclxuXHRpZiggYXNlYS5zZXJ2ZXIgKXtcclxuXHRcdGlmKCBvcHRpb24ucGVybWFuZW50ID09PSB0cnVlICl7XHJcblx0XHRcdHJlc3BvbnNlLnJlZGlyZWN0KCAzMDEsIHJlZGlyZWN0UGF0aCApO1xyXG5cclxuXHRcdH1lbHNle1xyXG5cdFx0XHRyZXNwb25zZS5yZWRpcmVjdCggcmVkaXJlY3RQYXRoICk7XHJcblx0XHR9XHJcblxyXG5cdH1lbHNlIGlmKCBhc2VhLmNsaWVudCApe1xyXG5cdFx0d2luZG93LmxvY2F0aW9uLnJlcGxhY2UoIHJlZGlyZWN0UGF0aCApO1xyXG5cdH1cclxuXHJcblx0cmV0dXJuIHJlZGlyZWN0UGF0aDtcclxufTtcclxuXHJcbm1vZHVsZS5leHBvcnRzID0gc2Vnd2F5O1xyXG4iXX0=
 //# sourceMappingURL=segway.support.js.map

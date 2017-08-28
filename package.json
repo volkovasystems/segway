@@ -1,58 +1,60 @@
 {
-  "name": "segway",
-  "version": "0.19.0",
-  "description": "Status redirect response.",
-  "main": "segway.js",
-  "support": "segway.support.js",
-  "deploy": "segway.deploy.js",
-  "browser": "segway.deploy.js",
-  "scripts": {
-    "build": "gulp && babel segway.support.js --out-file segway.support.js --source-maps && webpack --progress --display-modules",
-    "test": "mocha segway-test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/volkovasystems/segway.git"
-  },
-  "keywords": [
-    "status",
-    "redirect",
-    "response",
-    "segway"
-  ],
-  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-  "contributors": [
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/volkovasystems/segway/issues"
-  },
-  "homepage": "https://github.com/volkovasystems/segway#readme",
-  "dependencies": {
-    "asea": "^0.13.0",
-    "babel-runtime": "^6.23.0",
-    "calcify": "^0.7.0",
-    "clazof": "^0.27.0",
-    "falze": "^0.22.0",
-    "falzy": "^0.19.0",
-    "lilfy": "^0.11.0",
-    "protype": "^0.21.0",
-    "truly": "^0.18.0",
-    "truu": "^0.25.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.24.1",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-debug": "^3.1.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.5.4",
-    "source-map-loader": "^0.2.1",
-    "webpack": "^2.5.1"
-  }
+	"name": "segway",
+	"version": "0.19.0",
+	"description": "Status redirect response.",
+	"main": "segway.js",
+	"support": "segway.support.js",
+	"deploy": "segway.deploy.js",
+	"browser": "segway.deploy.js",
+	"scripts": {
+		"pristine": "rsetmod clean && flxc execute ./.install.sh",
+		"reset": "rsetmod clean",
+		"clear": "rsetmod clean --clear",
+		"formal": "jesy apply '*.json'",
+		"build:support": "gulp --module segway --all",
+		"build:deploy": "webpack --config webpack.compact.js --progress --display-modules",
+		"rebuild": "npm run build:support && npm run build:deploy",
+		"build": "npm run pristine && npm run rebuild",
+		"build:test:support": "gulp --module test --all",
+		"build:test:deploy": "webpack --config webpack.test.js --progress --display-modules",
+		"build:test:bridge": "gulp --module test --bridge",
+		"build:test": "npm run build:test:support && npm run build:test:deploy && npm run build:test:bridge",
+		"test:server": "mocha --slow=0 test.js && mocha --slow=0 test.js --reporter=json > test.server.json",
+		"test:client": "./node_modules/.bin/wdio wdio.client.js",
+		"pretest": "npm run clear && npm run rebuild && npm run build:test",
+		"test": "npm run test:server && npm run test:client",
+		"posttest": "npm run formal",
+		"deploy": "npm run build && npm run build:test && npm run test:server && npm run test:client && npm run formal"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/volkovasystems/segway.git"
+	},
+	"keywords": [
+		"status",
+		"redirect",
+		"response",
+		"segway"
+	],
+	"author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+	"contributors": [
+		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/volkovasystems/segway/issues"
+	},
+	"homepage": "https://github.com/volkovasystems/segway#readme",
+	"dependencies": {
+		"asea": "^0.16.0",
+		"babel-runtime": "^6.26.0",
+		"calcify": "^0.11.0",
+		"clazof": "^0.36.0",
+		"falze": "^0.26.0",
+		"falzy": "^0.23.0",
+		"lilfy": "^0.13.0",
+		"protype": "^0.24.0",
+		"truly": "^0.20.0",
+		"truu": "^0.30.0"
+	}
 }

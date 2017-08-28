@@ -1,8 +1,29 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<script
-			type="application/javascript"
-			src="./segway.deploy.js">
-		</script>
+		<meta charset="utf-8">
+
+		<title>test:segway</title>
+
+		<link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css"/>
 	</head>
+
+	<body>
+		<div id="mocha"></div>
+
+		<script type="application/javascript" src="https://unpkg.com/mocha/mocha.js"></script>
+
+		<script type="application/javascript">
+			mocha.setup( {
+				"ui": "bdd",
+				"slow": 0
+			} );
+		</script>
+
+		<script type="application/javascript" src="./test.deploy.js"></script>
+
+		<script type="application/javascript">
+			mocha.run( );
+		</script>
+	</body>
 </html>

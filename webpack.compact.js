@@ -1,7 +1,10 @@
 "use strict";
 
 const webpack = require( "webpack" );
+
+const DefinePlugin = webpack.DefinePlugin;
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+const ModuleConcatenationPlugin = webpack.optimize.ModuleConcatenationPlugin;
 
 module.exports = {
 	"entry": "./segway.support.js",
@@ -36,15 +39,25 @@ module.exports = {
 		"filename": "segway.deploy.js"
 	},
 	"plugins": [
+		new DefinePlugin( {
+			"process.env.NODE_ENV": '"production"'
+		} ),
+
+		new ModuleConcatenationPlugin( ),
+
 		new UglifyJsPlugin( {
 			"compress": {
 				"keep_fargs": true,
 				"keep_fnames": true,
-				"warnings": false
+				"keep_infinity": true,
+				"warnings": false,
+				"passes": 3
+			},
+			"mangle": {
+				"keep_fnames": true
 			},
 			"comments": false,
-			"sourceMap": true,
-			"mangle": false
+			"sourceMap": true
 		} )
 	],
 	"devtool": "#source-map"
