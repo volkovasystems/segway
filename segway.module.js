@@ -57,7 +57,6 @@
 			"falzy": "falzy",
 			"http": "http",
 			"lilfy": "lilfy",
-			"protype": "protype",
 			"truly": "truly",
 			"truu": "truu"
 		}
@@ -70,7 +69,6 @@ const clazof = require( "clazof" );
 const falze = require( "falze" );
 const falzy = require( "falzy" );
 const lilfy = require( "lilfy" );
-const protype = require( "protype" );
 const truly = require( "truly" );
 const truu = require( "truu" );
 
@@ -102,29 +100,29 @@ const segway = function segway( option ){
 	*/
 
 	let response = null;
-	if( asea.server ){
+	if( asea.SERVER ){
 		response = option.response;
 
 		if( falze( response ) ||
 			!clazof( response, http.ServerResponse ) ||
-			!protype( response.redirect, FUNCTION ) )
+			typeof response.redirect != "function" )
 		{
 			throw new Error( "invalid response" );
 		}
 	}
 
 	let path = option.path;
-	if( falzy( path ) || !protype( path, STRING ) ){
+	if( falzy( path ) || typeof path != "string" ){
 		throw new Error( "invalid path" );
 	}
 
 	let status = option.status;
-	if( falzy( status ) || !protype( status, STRING ) ){
+	if( falzy( status ) || typeof status != "string" ){
 		throw new Error( "invalid status" );
 	}
 
 	let data = option.data;
-	if( protype( data, OBJECT ) && truu( data ) ){
+	if( typeof data == "object" && truu( data ) ){
 		try{
 			data = calcify( data );
 
@@ -133,7 +131,7 @@ const segway = function segway( option ){
 		}
 	}
 
-	if( protype( data, STRING ) && truly( data ) ){
+	if( typeof data == "string" && truly( data ) ){
 		data = lilfy( data );
 	}
 
@@ -142,7 +140,7 @@ const segway = function segway( option ){
 		redirectPath = redirectPath + "?data=" + data;
 	}
 
-	if( asea.server ){
+	if( asea.SERVER ){
 		if( option.permanent === true ){
 			response.redirect( 301, redirectPath );
 
@@ -150,7 +148,7 @@ const segway = function segway( option ){
 			response.redirect( redirectPath );
 		}
 
-	}else if( asea.client ){
+	}else if( asea.CLIENT ){
 		window.location.replace( redirectPath );
 	}
 

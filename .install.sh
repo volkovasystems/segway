@@ -6,7 +6,6 @@ clazof \
 falze \
 falzy \
 lilfy \
-protype \
 truly \
 truu \
 --save && \
@@ -41,7 +40,6 @@ clazof \
 falze \
 falzy \
 lilfy \
-protype \
 truly \
 truu \
 --save \
